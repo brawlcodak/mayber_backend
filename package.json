@@ -4,7 +4,8 @@
   "description": "this is back end",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "npm i"
   },
   "author": "brawlcodak",
   "license": "ISC",
