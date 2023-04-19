@@ -1,9 +1,9 @@
 require('dotenv').config();
 
 module.exports = {
-    app: {
+/*     app: {
         port: process.env.PORT || 3500,
-    },
+    }, */
     jwt: {
         secret: process.env.JET_SECRET || 'secretnote!'
     },
