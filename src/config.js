@@ -8,9 +8,9 @@ module.exports = {
         secret: process.env.JET_SECRET || 'secretnote!'
     },
     mysql: {
-        host: process.env.MYSQL_HOST,
-        user: process.env.MYSQL_USER,
-        password: process.env.MYSQL_PASSWORD,
-        database: process.env.MYSQL_DB
+        host: process.env.host,
+        user: process.env.username,
+        password: process.env.password,
+        database: process.env.database
     }
 }

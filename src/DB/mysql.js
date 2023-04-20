@@ -1,16 +1,20 @@
 const mysql = require('mysql');
-const mysql2 = require('mysql2')
+const {createPool} = require('mysql2/promise')
 const config = require('../config');
 const dbconfig = {
     host: config.mysql.host,
     user: config.mysql.user,
     password: config.mysql.password,
-    database: config.mysql.database
+    database: config.mysql.database,
+    ssl: {
+        rejectUnauthorized: false
+    }
 }
 let conexion;
-function conMysql(){
-    conexion = mysql2.createConnection(dbconfig);
-    conexion.connect((err) => {
+async function conMysql(){
+    conexion = await createPool(dbconfig);
+    console.log('Connection Ready!!');
+    /* conexion.connect((err) => {
         if(err){
             console.log('[db err]', err);
             setTimeout(conMysql, 200);
@@ -25,7 +29,7 @@ function conMysql(){
         }else{
             throw err;
         }
-    });
+    }); */
 }
 conMysql();
 
