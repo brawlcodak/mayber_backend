@@ -1,4 +1,5 @@
 const mysql = require('mysql');
+const mysql2 = require('mysql2')
 const config = require('../config');
 const dbconfig = {
     host: config.mysql.host,
@@ -8,7 +9,7 @@ const dbconfig = {
 }
 let conexion;
 function conMysql(){
-    conexion = mysql.createConnection(dbconfig);
+    conexion = mysql2.createConnection(dbconfig);
     conexion.connect((err) => {
         if(err){
             console.log('[db err]', err);
