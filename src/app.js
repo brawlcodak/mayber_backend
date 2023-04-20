@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
      next();
 });
 
-app.set('port', config.app.port)
+app.set('port', config.app.port);
 
 //paths
 app.use('/api/users', users);
